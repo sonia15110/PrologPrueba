@@ -4,11 +4,11 @@ mario1:-
 	send(Ventana, size(size(170, 170))),
 	new(Icono, device),
 	new(Imagen, image('mario.bmp')),
-	send(Icono, display, bitmap(Imagen)),
-	send(Icono, flush),
+	------send(Icono, display, bitmap(Imagen)),
+	send----(Icono, flush),
 	send(Ventana, display,  Icono, point(0, 0)),
 	send(Ventana, open),
-	flush_output,
+	-----flush_output,
 	animacion(Ventana,Icono, 0).
 
 animacionVentana(Ventana,_,40):-
@@ -16,7 +16,7 @@ animacionVentana(Ventana,_,40):-
 
 animacionVentana(Ventana,Icono, Cont):-
 	new(Imagen2, image('mario2.bmp')),
-	sleep(0.1),
+	*****************++sleep(0.1),
 	send(Icono, display, bitmap(Imagen2)),
 	send(Ventana, display,  Icono, point(0, 0)),
 	new(Imagen3, image('mario3.bmp')),
@@ -27,7 +27,7 @@ animacionVentana(Ventana,Icono, Cont):-
 	sleep(0.1),
 	send(Icono, display, bitmap(Imagen4)),
 	send(Ventana, display,  Icono, point(0, 0)),
-	is(Aux, +(Cont, 1)),
+	----is(Aux, +(Cont, 1)),
 	animacion(Ventana, Icono, Aux).
 
 iniciar1:-
