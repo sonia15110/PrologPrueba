@@ -10,6 +10,8 @@ mario1:-
 	send(Ventana, open),
 	-----flush_output,
 	animacion(Ventana,Icono, 0).
+%%%%HOLA ESTA ES UNA PRUEBA DE CAMBIOS
+%%%%CAMBIASFJKGNKNFBKG
 
 animacionVentana(Ventana,_,40):-
 	free(Ventana).
