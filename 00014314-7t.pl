@@ -1,5 +1,6 @@
-mario:-
+mario1:-
 	new(Ventana, dialog('Labo 7')),
+
 	send(Ventana, size(size(170, 170))),
 	new(Icono, device),
 	new(Imagen, image('mario.bmp')),
@@ -10,10 +11,10 @@ mario:-
 	flush_output,
 	animacion(Ventana,Icono, 0).
 
-animacion(Ventana,_,40):-
+animacionVentana(Ventana,_,40):-
 	free(Ventana).
 
-animacion(Ventana,Icono, Cont):-
+animacionVentana(Ventana,Icono, Cont):-
 	new(Imagen2, image('mario2.bmp')),
 	sleep(0.1),
 	send(Icono, display, bitmap(Imagen2)),
@@ -29,7 +30,7 @@ animacion(Ventana,Icono, Cont):-
 	is(Aux, +(Cont, 1)),
 	animacion(Ventana, Icono, Aux).
 
-iniciar:-
+iniciar1:-
 	new(Ventana, dialog('Labo 7')),
 	send(Ventana, size(size(300, 300))),
 	new(Nombre, text_item(nombre)),
